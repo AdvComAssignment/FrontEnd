@@ -44,6 +44,7 @@
     <h1>Animals</h1>
     <table>
         <tr>
+            <th>ID</th>
             <th>Name</th>
             <th>Data</th>
             <th>Pic</th>
@@ -51,6 +52,7 @@
         </tr>
         <% for (var i = 0; i < Animals.length; i++) { %>
             <tr>
+                <td><%= Animals[i].ID %></td>
                 <td><%= Animals[i].Name %></td>
                 <td><%= Animals[i].Data %></td>
                 <td><img src="<%= Animals[i].Pic %>" alt="Animal Pic"></td>
