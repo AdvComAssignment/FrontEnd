@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habitat Of Animal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        a {
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        .actions {
+            display: flex;
+            gap: 5px;
+        }
+
+        .create-link {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Habitat Of Animal</h1>
+    <table>
+        <tr>
+            <th>Animal ID</th>
+            <th>Habitat ID</th>
+            <th>Actions</th>
+        </tr>
+        <% for (var i = 0; i < HabitatOfAnimals.length; i++) { %>
+            <tr>
+                <td><%= HabitatOfAnimals[i].AnimalID %></td>
+                <td><%= HabitatOfAnimals[i].HabitatID %></td>
+                <td class="actions">
+                    <a href="/HabitatOfAnimal/<%= HabitatOfAnimals[i].AnimalID %>">View</a>
+                    <a href="/updateHabitatOfAnimal/<%= HabitatOfAnimals[i].AnimalID %>">Update</a>
+                    <a href="/deleteHabitatOfAnimal/<%= HabitatOfAnimals[i].AnimalID %>">Delete</a>
+                </td>
+            </tr>
+        <% } %>
+    </table>
+    <a href="/createHabitatOfAnimal" class="create-link">Create New Habitat Of Animals</a>
+    <a href="/Animals" class="create-link">Add Animal</a>
+    <a href="/Habitats" class="create-link">Add Habitat</a>
+</body>
+</html>

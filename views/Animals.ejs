@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Animals</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+            white-space: pre-wrap; /* ให้ข้อมูลขยายเมื่อมีข้อมูลมาก */
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        img {
+            max-width: 100px;
+            max-height: 100px;
+        }
+
+        .actions {
+            display: flex;
+            gap: 5px;
+        }
+        img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover; /* ตั้งค่า object-fit เพื่อให้รูปภาพปรับขนาดและครอบคลุมตามขนาดที่กำหนด */
+}
+    </style>
+</head>
+<body>
+    <h1>Animals</h1>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Data</th>
+            <th>Pic</th>
+            <th>Actions</th>
+        </tr>
+        <% for (var i = 0; i < Animals.length; i++) { %>
+            <tr>
+                <td><%= Animals[i].Name %></td>
+                <td><%= Animals[i].Data %></td>
+                <td><img src="<%= Animals[i].Pic %>" alt="Animal Pic"></td>
+                <td class="actions">
+                    <a href="/Animal/<%= Animals[i].ID %>">View</a>
+                    <a href="/updateAnimal/<%= Animals[i].ID %>">Update</a>
+                    <a href="/deleteAnimal/<%= Animals[i].ID %>">Delete</a>
+                </td>
+            </tr>
+        <% } %>
+    </table>
+    <a href="/createAnimal">Create New Animal</a>
+    <a href="/" class="create-link">Add Habitat Of animal</a>
+    <a href="/Habitats" class="create-link">Add Habitat</a>
+</body>
+</html>
