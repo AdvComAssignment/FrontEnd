@@ -5,39 +5,75 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2196f3;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
+            background-color: #333;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
+            border: 1px solid #444;
+            padding: 12px;
             text-align: left;
-            white-space: pre-wrap; /* ให้ข้อมูลขยายเมื่อมีข้อมูลมาก */
+            white-space: pre-wrap; 
         }
 
         th {
-            background-color: #f2f2f2;
+            background-color: #222;
         }
 
         img {
-            max-width: 100px;
-            max-height: 100px;
+            max-width: 300px;
+            max-height: auto;
+            object-fit: cover; 
+            border-radius: 5px;
         }
 
         .actions {
             display: flex;
             gap: 5px;
         }
-        img {
-    width: 300px;
-    height: 300px;
-    object-fit: cover; /* ตั้งค่า object-fit เพื่อให้รูปภาพปรับขนาดและครอบคลุมตามขนาดที่กำหนด */
-}
+
+        .actions a {
+            text-decoration: none;
+            padding: 8px 12px;
+            background-color: #2196f3;
+            color: #fff;
+            border-radius: 3px;
+            transition: background-color 0.3s ease;
+        }
+
+        .actions a:hover {
+            background-color: #1769aa;
+        }
+
+        .create-link {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            text-decoration: none;
+            background-color: #4caf50;
+            color: #fff;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .create-link:hover {
+            background-color: #45a049;
+        }
     </style>
 </head>
 <body>
@@ -64,7 +100,7 @@
             </tr>
         <% } %>
     </table>
-    <a href="/createHabitat">Create New Habitat</a>
+    <a href="/createHabitat"class="create-link">Create New Habitat</a>
     <br>
     <a href="/" class="create-link">Add Habitat Of animal</a>
     <br>
