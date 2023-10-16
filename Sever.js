@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 
 
 
-const base_url = 'http://localhost:3000';
+const base_url = 'http://node53114-assigment.proen.app.ruk-com.cloud';
 
 
 app.set('view engine', 'ejs');
@@ -165,8 +165,8 @@ app.get("/deleteHabitat/:ID", async (req, res) => {
 
 app.get('/', async (req, res) => {
     try{
-        const response = await axios.get(base_url + '/Animal');
-        res.render('Animals', { Animals: response.data });
+        const response = await axios.get(base_url + '/HabitatOfAnimal');
+        res.render('HabitatOfAnimals', { HabitatOfAnimals: response.data });
     } catch (err) {
         console.log(err);
         res.status(500).send('err');
